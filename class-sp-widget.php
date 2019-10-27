@@ -68,7 +68,7 @@ abstract class SP_Widget_ABS extends WP_Widget{
 
         if($type == 'number'){
             echo '<p><label for="'.$this->get_field_id($id).'">'.$label.':</label><br>';
-            echo '<input type="number" class="spnumber" id="'.$this->get_field_id($id).'" name="'.$this->get_field_name($id).'" value="'.esc_attr($values).'">'.$caption.'</p>';
+            echo '<input type="number" class="spnumber" id="'.$this->get_field_id($id).'" name="'.$this->get_field_name($id).'" value="'.esc_attr($values).'"></p>';
         }
     }
 
