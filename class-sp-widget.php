@@ -12,23 +12,23 @@ class SP_Widget{
 		$data = $this->config;
 
 		$values = array(
-            'name'          => __('Custom widget', 'spf86'),
-            'id'            => 'spf86_widget',
-            'description'   => __('Add widgets here', 'spf86'),
-            'before_title'  => '',
-            'after_title'   => '',
-            'before_widget' => '',
-            'after_widget'  => '',
-        );
+		    'name'          => __('Custom widget', 'spf86'),
+		    'id'            => 'spf86_widget',
+		    'description'   => __('Add widgets here', 'spf86'),
+		    'before_title'  => '',
+		    'after_title'   => '',
+		    'before_widget' => '',
+		    'after_widget'  => '',
+		);
 
-        foreach ($values as $key => $value) {
+        	foreach ($values as $key => $value) {
 			if (array_key_exists($key, $data)) {
 				$values[$key] = $data[$key];
 			}
 		}
 
-        register_sidebar($values);
-    }
+        	register_sidebar($values);
+    	}
 
 	public function sp_register_widget_area($data){
 		$this->config = $data;
@@ -38,9 +38,9 @@ class SP_Widget{
 
 abstract class SP_Widget_ABS extends WP_Widget{
 
-	//show widget(frontend)
+    //show widget(frontend)
     function widget($args, $data) {
-    	$this->sp_widget($args, $data);
+	$this->sp_widget($args, $data);
     }
 
     //show widget(backend)
