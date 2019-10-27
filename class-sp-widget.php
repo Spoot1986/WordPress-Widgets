@@ -70,35 +70,6 @@ abstract class SP_Widget_ABS extends WP_Widget{
             echo '<p><label for="'.$this->get_field_id($id).'">'.$label.':</label><br>';
             echo '<input type="number" class="spnumber" id="'.$this->get_field_id($id).'" name="'.$this->get_field_name($id).'" value="'.esc_attr($values).'">'.$caption.'</p>';
         }
-
-        if($type == 'select'){
-            echo '<p><label for="'.$this->get_field_id($id).'">'.$label.':</label><br>';
-            echo '<select class="widefat" id="'.$this->get_field_id($id).'" name="'.$this->get_field_name($id).'">';
-
-            $i = 0;
-            foreach ($values as $val) {
-                   
-                if($i == 0){
-                	foreach ($values as $fval){
-                		if($fval['key'] == $val['key'] && !empty($fval['value'])){
-                			echo '<option value="'.$fval['key'].'">'.$fval['value'].'</option>';	
-                		}
-                	}                	
-                }
-
-                $i++; 
-
-                if(!empty($val['value'])){
-                	echo '<option value="'.$val['key'].'">'.$val['value'].'</option>';
-                }
-
-                if($i == 1){
-                    echo '<option disabled>-------</option>';
-                } 
-            }
-
-            echo '</select>';
-        }
     }
 
     public function sp_get_default_value($data, $key){
